@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - "node"
+  
+addons:
+  ssh_known_hosts:
+    51.15.172.104
 
 branches:
   only:
