@@ -13,4 +13,4 @@ branches:
 after_success:
   - echo ${password} | openssl enc -d -aes-192-cbc -pass stdin -in deploy_rsa.enc -out deploy_rsa
   - chmod 600 ./deploy_rsa
-  - ssh 'mishgunn@51.15.172.104' 'bash -s' <  ./script.sh
+  - ssh -i ./deploy_rsa 'mishgunn@51.15.172.104' 'bash -s' <  ./script.sh
